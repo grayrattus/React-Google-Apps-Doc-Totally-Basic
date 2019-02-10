@@ -1,14 +1,4 @@
-function onOpen() {
-}
-function openDialog() {
-}
-function getSheetsData() {
-}
-function addSheet() {
-}
-function deleteSheet() {
-}
-function setActiveSheet() {
+function run() {
 }!function(e, a) {
     for (var i in a) e[i] = a[i];
 }(this, function(modules) {
@@ -55,55 +45,14 @@ function setActiveSheet() {
         return __webpack_require__.d(getter, "a", getter), getter;
     }, __webpack_require__.o = function(object, property) {
         return Object.prototype.hasOwnProperty.call(object, property);
-    }, __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 1);
-}([ function(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-    __webpack_require__.d(__webpack_exports__, "d", function() {
-        return onOpen;
-    }), __webpack_require__.d(__webpack_exports__, "e", function() {
-        return openDialog;
-    }), __webpack_require__.d(__webpack_exports__, "c", function() {
-        return getSheetsData;
-    }), __webpack_require__.d(__webpack_exports__, "a", function() {
-        return addSheet;
-    }), __webpack_require__.d(__webpack_exports__, "b", function() {
-        return deleteSheet;
-    }), __webpack_require__.d(__webpack_exports__, "f", function() {
-        return setActiveSheet;
-    });
-    var onOpen = function() {
-        SpreadsheetApp.getUi().createMenu("Custom scripts").addItem("Edit sheets [sample React project]", "openDialog").addToUi();
-    }, openDialog = function() {
-        var html = HtmlService.createHtmlOutputFromFile("dialog").setWidth(400).setHeight(600);
-        SpreadsheetApp.getUi().showModalDialog(html, "Sheet Editor");
-    }, getSheets = function() {
-        return SpreadsheetApp.getActive().getSheets();
-    }, getSheetsData = function() {
-        var activeSheetName = SpreadsheetApp.getActive().getSheetName();
-        return getSheets().map(function(sheet, index) {
-            var sheetName = sheet.getName();
-            return {
-                text: sheetName,
-                sheetIndex: index,
-                isActive: sheetName === activeSheetName
-            };
-        });
-    }, addSheet = function(sheetTitle) {
-        return SpreadsheetApp.getActive().insertSheet(sheetTitle), getSheetsData();
-    }, deleteSheet = function(sheetIndex) {
-        var sheets = getSheets();
-        return SpreadsheetApp.getActive().deleteSheet(sheets[sheetIndex]), getSheetsData();
-    }, setActiveSheet = function(sheetName) {
-        return SpreadsheetApp.getActive().getSheetByName(sheetName).activate(), getSheetsData();
-    };
-}, function(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-    __webpack_require__.r(__webpack_exports__), function(global) {
-        var _sheets_utilities_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-        global.onOpen = _sheets_utilities_js__WEBPACK_IMPORTED_MODULE_0__["d"], global.openDialog = _sheets_utilities_js__WEBPACK_IMPORTED_MODULE_0__["e"], 
-        global.getSheetsData = _sheets_utilities_js__WEBPACK_IMPORTED_MODULE_0__["c"], global.addSheet = _sheets_utilities_js__WEBPACK_IMPORTED_MODULE_0__["a"], 
-        global.deleteSheet = _sheets_utilities_js__WEBPACK_IMPORTED_MODULE_0__["b"], global.setActiveSheet = _sheets_utilities_js__WEBPACK_IMPORTED_MODULE_0__["f"];
-    }.call(this, __webpack_require__(2));
+    }, __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 0);
+}([ function(module, exports, __webpack_require__) {
+    (function(global) {
+        global.run = function() {
+            var html = HtmlService.createHtmlOutputFromFile("dialog").setWidth(400).setHeight(600);
+            DocumentApp.getUi().showModalDialog(html, "Sheet Editor");
+        };
+    }).call(this, __webpack_require__(1));
 }, function(module, exports) {
     var g;
     g = function() {

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SheetEditor from './components/sheet-editor';
+import Main from './components/main';
 
 ReactDOM.render(
-  <SheetEditor />,
+  <Main name="test"></Main>,
   document.getElementById('index')
 );
